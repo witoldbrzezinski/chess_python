@@ -48,9 +48,10 @@ def main():
                     if move in valid_moves:
                         game_state.make_move(move)
                         move_made = True
-                    #   game_state.make_move(move)
-                    sq_selected = ()
-                    player_clicks = []
+                        sq_selected = ()
+                        player_clicks = []
+                    else:
+                        player_clicks = [sq_selected]
             elif e.type == p.KEYDOWN:
                 if e.key == p.K_z:
                     game_state.undo_move()
@@ -62,7 +63,6 @@ def main():
         draw_game_state(screen, game_state)
         clock.tick(MAX_FPS)
         p.display.flip()
-
 
 
 def draw_game_state(screen, game_state):
